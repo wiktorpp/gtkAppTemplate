@@ -7,9 +7,9 @@ class Handler:
         Gtk.main_quit()
 
     def __getattr__(self, name):
+        print(f'Signal "{name}" is not defined')
         return lambda self, *args: print(
-            f'Signal "{name}" '
-            f'was sent by a {self.get_name()} '
+            f'Signal "{name}" was sent by a {self.get_name()} '
         )
 
 builder = Gtk.Builder()
