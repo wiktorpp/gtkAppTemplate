@@ -6,7 +6,7 @@ class Handler:
     def onDestroy(self, *args):
         Gtk.main_quit()
 
-    def __getattr__(self, name, *args):
+    def __getattr__(self, name):
         return lambda *args: print({"name": name, "args": args})
 
 builder = Gtk.Builder()
