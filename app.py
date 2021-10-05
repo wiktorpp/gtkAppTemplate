@@ -15,7 +15,7 @@ builder.connect_signals(Handler())
 
 window = builder.get_object("window")
 
-hb = builder.get_object("headerBar")
+hb = builder.get_object("headerbar")
 hb.get_parent().remove(hb)
 window.set_titlebar(hb)
 
