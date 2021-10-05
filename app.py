@@ -7,7 +7,11 @@ class Handler:
         Gtk.main_quit()
 
     def __getattr__(self, name):
-        return lambda *args: print({"name": name, "args": args})
+        return lambda self, *args: print(
+            f'Signal "{name}" '
+            f'was sent by a {self.get_name()} '
+            f'with arguments {args}'
+        )
 
 builder = Gtk.Builder()
 builder.add_from_file("ui.glade")
