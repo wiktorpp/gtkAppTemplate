@@ -18,10 +18,5 @@ builder.add_from_file("ui.glade")
 builder.connect_signals(Handler())
 
 window = builder.get_object("window")
-
-hb = builder.get_object("headerbar")
-hb.get_parent().remove(hb)
-window.set_titlebar(hb)
-
 window.show_all()
 Gtk.main()
