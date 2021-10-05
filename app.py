@@ -10,7 +10,6 @@ class Handler:
         return lambda self, *args: print(
             f'Signal "{name}" '
             f'was sent by a {self.get_name()} '
-            f'with arguments {args}'
         )
 
 builder = Gtk.Builder()
