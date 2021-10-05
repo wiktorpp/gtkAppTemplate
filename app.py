@@ -7,10 +7,8 @@ class Handler:
         Gtk.main_quit()
 
     def __getattr__(self, name):
-        print(f'Signal "{name}" is not defined')
-        return lambda self, *args: print(
-            f'Signal "{name}" was sent by a {self.get_name()} '
-        )
+        print(f'Handler "{name}" is not defined')
+        return lambda self, *args: print(f'Handler "{name}" was called by a {self.get_name()}')
 
 builder = Gtk.Builder()
 builder.add_from_file("ui.glade")
