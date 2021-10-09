@@ -3,7 +3,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
 class Handler:
-    def onDestroy(self, *args):
+    def onDestroy(self, window):
         Gtk.main_quit()
 
     def __getattr__(self, name):
